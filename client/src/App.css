@@ -7,28 +7,36 @@
 }
 
 /* Header */
+.header {
+  grid-area: header;
+  text-align: center;
+  flex-direction: column;
+}
+
 .beforeHeader {
   background-color: rgb(233, 233, 233);
   text-align: center;
   padding: 5px;
   border-bottom: solid;
 }
+.display {
+  display: inline-block;
+  max-width: 1160px;
+  min-width: 1160px;
+  background-color: aquamarine;
+}
 .wrapper1 {
   display: inline-flex;
   justify-content: space-between;
-  width: 1160px;
+  max-width: 1160px;
+  min-width: 1160px;
   font-size: small;
 }
 .blue {
   height: 47px;
   background-color: #4e78d0;
 }
-.header {
-  grid-area: header;
-  background-color: aqua;
-  height: 120px;
-  text-align: center;
-}
+
 #logo {
   padding: 15px;
   padding-left: 0px;
