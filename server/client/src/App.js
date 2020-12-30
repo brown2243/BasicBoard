@@ -6,20 +6,6 @@ function App() {
   return (
     <div className="container">
       <Router />
-      {/* <body>
-        <Header />
-
-        <main>
-          <div className="main-content wrapper">
-            <Router />
-            <SideBar />
-          </div>
-        </main>
-
-        <footer className="footer">
-          <Footer />
-        </footer>
-      </body> */}
     </div>
   );
 }

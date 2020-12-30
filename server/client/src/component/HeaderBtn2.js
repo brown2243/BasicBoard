@@ -23,8 +23,16 @@ function BasicButtonGroup() {
         color="primary"
         aria-label="contained primary button group"
       >
-        <Button>전체 게시판</Button>
-        <Button>글 작성하기</Button>
+        <Button>
+          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            전체 게시판
+          </Link>
+        </Button>
+        <Button>
+          <Link to="/write" style={{ color: "white", textDecoration: "none" }}>
+            글 작성하기
+          </Link>
+        </Button>
       </ButtonGroup>
     </div>
   );
