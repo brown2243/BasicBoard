@@ -14,10 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
+from rest_framework import routers
+from rest_framework_swagger.views import get_swagger_view
+
+import BoardApp.api
+import CommentApp.api
+import Member.api
+
+app_name='BoardApp'
+app_name='CommentApp'
+app_name='Member'
+
+router = routers.DefaultRouter()
+router.register('BoardApp',BoardApp.api.MyBoardViewSet)
+router.register('CommentApp', CommentApp.api.CommentViewSet)
+router.register('Member', Member.api.MemberViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
+    path('api/doc',get_swagger_view(title='Rest API Document')),
+    path('api/v1/', include((router.urls,'BoardApp'), namespace='BoardApp')),
+    path('api/v1/', include((router.urls,'CommentApp'), namespace='CommentApp')),
+    path('api/v1/', include((router.urls,'Member'), namespace='Member')),
 ]

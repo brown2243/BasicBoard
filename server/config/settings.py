@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
+    'rest_framework_swagger',
+    'BoardApp',
+    'CommentApp',
+    'Member',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +54,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+#Django에서 React 포트를 인식할 수 있게 추가했어요.
+#마찬가지로 React에서 Django 포트를 인식할 수 있도록 client.package.json 파일에 proxy 설정을 추가했어요 참고바랍니당. 
+CORS_ORIGIN_WHITELIST = [
+
+    'http://localhost:3000' 
+
 ]
 
 ROOT_URLCONF = 'config.urls'
