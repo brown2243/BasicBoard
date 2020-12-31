@@ -10,22 +10,22 @@ import Footer from "./component/Footer2";
 function Routers() {
   return (
     <Router>
-      <body>
-        <Header />
-        <main>
-          <div className="main-content wrapper">
-            <Switch>
-              <Route exact path="/" component={Board} />
-              <Route exact path="/write" component={Write} />
-            </Switch>
-            <SideBar />
-          </div>
-        </main>
+      {/* <body> */}
+      <Header />
+      <main>
+        <div className="main-content wrapper">
+          <Switch>
+            <Route exact path="/" component={Board} />
+            <Route exact path="/write" component={Write} />
+          </Switch>
+          <SideBar />
+        </div>
+      </main>
 
-        <footer className="footer">
-          <Footer />
-        </footer>
-      </body>
+      <footer className="footer">
+        <Footer />
+      </footer>
+      {/* </body> */}
     </Router>
   );
 }
